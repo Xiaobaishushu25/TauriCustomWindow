@@ -20,7 +20,9 @@ fn main() {
                 SystemTrayEvent::MenuItemClick { .. } => {}
                 SystemTrayEvent::LeftClick { .. } => {
                     let main_window = app.get_window("main").unwrap();
-                    if main_window.is_minimized().unwrap() {
+                    if !main_window.is_visible().unwrap(){
+                        main_window.show().unwrap();
+                    }else if main_window.is_minimized().unwrap() {
                         main_window.unminimize().unwrap();
                     }
                     main_window.set_focus().unwrap();

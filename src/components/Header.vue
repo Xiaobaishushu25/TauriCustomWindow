@@ -15,6 +15,7 @@ watch(max_state, async (newValue) => {
 
 async function window_minimize(){
   await appWindow.minimize()
+  // console.log(await appWindow.isFocused()) //true
   // setTimeout(async ()=>{
   //   await appWindow.requestUserAttention(UserAttentionType.Critical)
   //   console.log("请求注意")
@@ -24,7 +25,8 @@ function window_maximize(){
   max_state.value =!max_state.value
 }
 async function window_close(){
-  await appWindow.close()
+  await appWindow.hide()
+  // await appWindow.close()
 }
 </script>
 
@@ -73,7 +75,7 @@ async function window_close(){
 }
 .min, .max, .close{
   /*font-size: 30px;用这个无法设置大小*/
-  width: 30px;
+  width: 40px;
   height: 30px;
 }
 

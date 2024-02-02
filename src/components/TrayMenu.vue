@@ -1,5 +1,14 @@
 <script setup lang="ts">
+import {appWindow, WebviewWindow, WindowManager} from "@tauri-apps/api/window";
+import {exit} from "@tauri-apps/api/process";
 
+async function window_close(){
+  // WebviewWindow.getByLabel(`main`)
+  // console.log(appWindow.label)
+  // await appWindow.close()
+  console.log("asdasd")
+  await exit(1)
+}
 </script>
 
 <template>
@@ -29,7 +38,7 @@
         <span class="time">1天前</span>
       </div>
       <div class="item">
-        <button>查看所有通知</button>
+        <button @click.left="window_close()">查看所有通知</button>
       </div>
     </div>
   </div>
