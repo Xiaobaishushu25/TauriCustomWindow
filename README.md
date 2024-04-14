@@ -82,3 +82,13 @@
      fill: #e7dbdb00;
    }
    ```
+
+6. 修改style.css<br>
+   ```
+   * {
+     /*窗口总是有空白边距，设置了这个才好了*/
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     }
+   ```
